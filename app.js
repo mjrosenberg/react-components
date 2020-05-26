@@ -24,7 +24,12 @@ class GroceryListItem extends React.Component {
       done: false
     };
   }
-  onListItemClick() {
+  // onMouseEnter() {
+  //   this.setState({
+  //     done: !this.state.done
+  //   });
+  // }
+  onListItemHover() {
     this.setState({
       done: !this.state.done
     });
@@ -35,11 +40,11 @@ class GroceryListItem extends React.Component {
     // `props` is no longer passed as an argument,
     // but instead accessed with `this.props`
     var style = {
-      textDecoration: this.state.done ? 'line-through' : 'none'
+      fontWeight: this.state.done ? 'bold' : 'normal'
       //if the state is done put a line through, if not don't
     };
     return (
-      <li style={style} onClick={this.onListItemClick.bind(this)}>{this.props.groceries}</li>
+      <li style={style} onMouseOver={this.onListItemHover.bind(this)} onMouseOut={this.onListItemHover.bind(this)}>{this.props.groceries}</li>
     );
   }
 }
