@@ -45,6 +45,9 @@ class GroceryListItem extends React.Component {
     };
     return (
       <li style={style} onMouseOver={this.onListItemHover.bind(this)} onMouseOut={this.onListItemHover.bind(this)}>{this.props.groceries}</li>
+      //this code (above) will have it only bold when actively hovering and turn off once the mouse leaves
+      // <li style={style} onMouseOver={this.onListItemHover.bind(this)}>{this.props.groceries}</li>
+      //this code will keep it bold until it is hovered over again
     );
   }
 }
